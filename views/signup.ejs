@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('./partials/BootStrapCss') %>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100svh;
+            width: 100vw;
+        }
+        form{
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .mb-3{
+                width:35vw;
+            }
+
+            .btn{
+                color: white;
+                background-color: #9002d2;
+                border: none;
+                box-shadow: 0px 0px 10px 0px #650093;
+                border-radius: 30px;
+                padding: 10px 20px;
+                font-weight: bold;
+                transition: all 0.3s ease-in-out;
+
+                &:hover{
+                    background-color: #ae00ff;
+                    box-shadow: 0px 0px 10px 0px #ae00ff;
+
+                }
+            }
+        }
+        .message{
+            color: red;
+            font-size: 0.8rem;
+        }
+        .SignupPg{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            color: #9002d2;
+            margin: 0 0 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/signup" method="post">
+        <div class="mb-3">
+            <label for="exampleInputFullName" class="form-label" >Full Name</label>
+            <input type="text" class="form-control" id="exampleInputFullName" name="name" required>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label" >Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="password" required>
+          <%- include('./partials/message1') %>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+
+    <%- include('./partials/BootStrapScript') %>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<%if(locals.message) {%>
+    <div id="emailHelp" class="form-text message"><%= `*${message}` %><a href="/login" class="SignupPg">already existing user? Login</a></div>
+<%}else{%>
+   
+         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.<a href="/login" class="SignupPg">already existing user? Login</a></div>
+    
+  <% } %>

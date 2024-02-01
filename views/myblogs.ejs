@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogify</title>
+    <%- include('./partials/BootStrapCss') %>
+    <style>
+        .navbar{
+            position: fixed;
+            top:0;
+            width:100vw;
+            z-index: 1;
+            right:0;
+        }
+    
+        .containerBlog{
+            width:100dvw;
+            min-height:90svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top:60px;
+            position: relative;
+        }
+        .card{
+            min-width:90vw;
+            min-height: 10svh;
+            padding: 5px;
+            margin:0 0 5px 0;
+        }
+        .userNames{
+            margin-top: 10px;
+            font-size:15px;
+            color: rgb(94, 180, 255);
+        }
+        .BlogText{
+            margin: 0;
+            word-wrap: break-word;
+            text-align:left;
+        }
+        .blogTitle{
+            margin: 4px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('./partials/nav') %>
+    <div class="containerBlog">
+        <%- include('./partials/card') %>
+    </div>
+    <%- include('./partials/BootStrapScript') %>
+</body>
+</html>
