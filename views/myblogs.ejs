@@ -25,7 +25,7 @@
             flex-direction: column;
         }
         .card{
-            min-width:90vw;
+            max-width:70vw;
             min-height: 10svh;
             padding: 5px;
             margin:0 0 5px 0;
@@ -45,6 +45,12 @@
             font-size: 30px;
             font-weight: bold;
             text-align: center;
+            word-wrap: break-word;
+        }
+        @media  screen and (max-width: 768px){
+            .card{
+                max-width:95vw;
+            }
         }
     </style>
 </head>
