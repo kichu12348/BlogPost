@@ -6,7 +6,7 @@ const blogRoutes = require('./routes/blog');
 const cookieParser = require('cookie-parser');
 //
 const {connectDB} = require('./connection');
-connectDB(process.env.MONGO_URL);
+connectDB('mongodb+srv://kichu12348:tk288174@blogy.nzqcolx.mongodb.net/?retryWrites=true&w=majority');
 
 //port
 const port =process.env.PORT || 8000;
