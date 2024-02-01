@@ -1,10 +1,11 @@
 
 
 <% if (locals.userBlg) { %>
-     <div class="card"> 
-       
-        <p class="userNames">@<%=userBlg.name%></p>
+   <% locals.userBlg.forEach(userBlg => { %>
+      <div class="card"> 
+        <p class="userNames">@<%= userBlg.name %></p>
         <p class="blogTitle"><%= userBlg.title %></p>
         <p class="BlogText"><%= userBlg.content %></p>
-   </div>
+      </div>
+   <% }); %>
 <% } %>

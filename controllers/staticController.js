@@ -12,11 +12,12 @@ async function login(req,res){
 async function home(req,res){
     const email = req.user?.email;
     const userBlg = await blog.find({email});
-    const allBlg = await blog.find();
-    const name = userBlg[0]?.name;
+    const allBlg = await blog.find({});
+    console.log(allBlg);
+    const name = userBlg?.name || req.user?.name;
     res.render('home',{
         user:name,
-        userBlg:allBlg[0],
+        userBlg:allBlg,
     });
 }
 
@@ -24,10 +25,10 @@ async function myblogs(req,res){
     
     const email = req.user.email;
     const userBlg = await blog.find({email});
-    const name = userBlg[0].name;
+    const name = userBlg.name || req.user.name;
     console.log(userBlg);
     res.render('myblogs',{
-        userBlg:userBlg[0],
+        userBlg:userBlg,
         user:name,
     
     });
@@ -37,7 +38,7 @@ async function myblogs(req,res){
 async function addblog(req,res){
     const email = req.user?.email;
     const userBlogs = await blog.find({email});
-    const name = userBlogs[0]?.name;
+    const name = userBlogs?.name || req.user?.name;
     
     res.render('addblogs',{
         user:name,
