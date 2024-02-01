@@ -35,9 +35,9 @@ async function myblogs(req,res){
 }
 
 async function addblog(req,res){
-    const email = req.user.email;
+    const email = req.user?.email;
     const userBlogs = await blog.find({email});
-    const name = userBlogs[0].name;
+    const name = userBlogs[0]?.name;
     
     res.render('addblogs',{
         user:name,
