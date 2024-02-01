@@ -6,7 +6,7 @@ const blogRoutes = require('./routes/blog');
 const cookieParser = require('cookie-parser');
 //
 const {connectDB} = require('./connection');
-connectDB(process.env.MongoDB_URL||'mongodb://127.0.0.1:27017/Blogify');
+connectDB('mongodb+srv://rmahadevan573:u9bQSAT18lYmkw1m@blogifyy.aaxknup.mongodb.net/?retryWrites=true&w=majority');
 
 //port
 const port =process.env.PORT || 8000;
