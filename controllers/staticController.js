@@ -13,7 +13,6 @@ async function home(req,res){
     const email = req.user?.email;
     const userBlg = await blog.find({email});
     const allBlg = await blog.find({});
-    console.log(allBlg);
     const name = userBlg?.name || req.user?.name;
     res.render('home',{
         user:name,
@@ -26,7 +25,6 @@ async function myblogs(req,res){
     const email = req.user.email;
     const userBlg = await blog.find({email});
     const name = userBlg.name || req.user.name;
-    console.log(userBlg);
     res.render('myblogs',{
         userBlg:userBlg,
         user:name,
