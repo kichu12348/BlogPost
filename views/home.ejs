@@ -13,9 +13,8 @@
             z-index: 1;
             right:0;
         }
-    
         .containerBlog{
-            width:100dvw;
+            width:100svw;
             min-height:90svh;
             display: flex;
             justify-content: center;
@@ -24,7 +23,7 @@
             flex-direction: column;
         }
         .card{
-            max-width:70vw;
+            width:70svw;
             min-height: 10svh;
             padding: 5px;
             margin:0 0 5px 0;
@@ -38,6 +37,7 @@
             margin: 0;
             word-wrap: break-word;
             text-align:left;
+            height:80%;
         }
         .blogTitle{
             margin: 4px;
@@ -48,7 +48,7 @@
         }
         @media  screen and (max-width: 768px){
             .card{
-                max-width:95vw;
+                width:95vw;
             }
         }
     </style>
@@ -59,6 +59,7 @@
     <div class="containerBlog">
         <%- include('./partials/card') %>
     </div>
+  
     <%- include('./partials/BootStrapScript') %>
 </body>
 </html>

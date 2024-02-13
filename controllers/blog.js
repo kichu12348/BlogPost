@@ -1,10 +1,11 @@
 const Blog = require('../models/blog');
 
-
+//creates blog after getting title and content from req.body and email and name from req.user
 async function createBlog(req,res){
     const {title,content} = req.body;
     const email = req.user.email;
     const name = req.user.name;
+    
     const blog = await Blog.create({
         title,
         content,
@@ -14,22 +15,16 @@ async function createBlog(req,res){
     res.redirect('/myblogs');
 }
 
-async function getBlogs(req,res){
-    const email = req.user.email;
-    const blogs = await Blog.find({email});
-    res.render('blogs',{
-        blogs
-    });
-}
+
+//deletes blog after finding it by id
 
 async function deleteBlog(req,res){
-    const id = req.body.blogId;
+    const id = req.params.id;
     await Blog.findByIdAndDelete(id);
     res.redirect('/myblogs');
 }
 
 module.exports = {
     createBlog,
-    getBlogs,
     deleteBlog 
 }
