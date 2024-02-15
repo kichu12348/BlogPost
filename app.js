@@ -4,9 +4,14 @@ const userRoutes = require('./routes/user');
 const staticRoutes = require('./routes/staticRoute');
 const blogRoutes = require('./routes/blog');
 const cookieParser = require('cookie-parser');
+
 //
 const {connectDB} = require('./connection');
 connectDB(process.env.MONGO_URL);
+
+//mongodb+srv://kichu12348:tk288174@blogy.nzqcolx.mongodb.net/?retryWrites=true&w=majority
+
+
 
 //port
 const port =process.env.PORT || 8000;
@@ -25,6 +30,7 @@ app.use(cookieParser());
 app.use('/', staticRoutes);
 app.use('/', userRoutes);
 app.use('/blog', blogRoutes);
+
 
 
 

@@ -22,6 +22,20 @@ async function home(req,res){
         userBlg:allBlg,
         delete:false
     });
+    
+}
+
+//returns all blogs in json format  for home page
+async function homeCard(req,res){
+    const allBlg = await blog.find({});
+    res.json(allBlg);
+}
+
+//returns all blogs of the user in json format for myblogs page
+async function myblogsCard(req,res){
+    const email = req.user.email;
+    const userBlg = await blog.find({email});
+    res.json(userBlg);
 }
 
 //renders myblogs page with all blogs of the user
@@ -51,4 +65,12 @@ async function addblog(req,res){
 }
 
 
-module.exports = {signup,login,home,myblogs,addblog};
+module.exports = {
+    signup,
+    login,
+    home,
+    myblogs,
+    addblog,
+    homeCard,
+    myblogsCard
+};

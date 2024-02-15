@@ -1,0 +1,25 @@
+<script>
+const container = document.querySelector('.containerBlog');
+const blogAppend = async ()=>{
+    const res = await fetch('/myBlog').then(res=>res.json());
+    res.forEach((userBlg)=>{
+        const card = document.createElement('div');
+        card.classList.add('card');
+            card.innerHTML = `
+            <form action="/blog/delete/${userBlg._id.toString()}" method="post" class="delete">
+                <button type="submit" class="deleteBtn">Delete</button>
+            </form>
+            <p class="userNames"></p>
+            <p class="blogTitle"></p>
+            <p class="BlogText"></p>
+        `;
+       
+        card.querySelector('.userNames').innerText ='@'+userBlg.name;
+        card.querySelector('.blogTitle').innerText = userBlg.title;
+        card.querySelector('.BlogText').innerText = userBlg.content;
+        container.appendChild(card);
+        
+    });
+}
+blogAppend();
+</script>
