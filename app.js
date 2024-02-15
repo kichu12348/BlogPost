@@ -4,6 +4,7 @@ const userRoutes = require('./routes/user');
 const staticRoutes = require('./routes/staticRoute');
 const blogRoutes = require('./routes/blog');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 //
 const {connectDB} = require('./connection');
