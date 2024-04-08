@@ -8,7 +8,7 @@ require('dotenv').config();
 
 //
 const {connectDB} = require('./connection');
-connectDB(process.env.MONGO_URL);
+connectDB("mongodb+srv://kichu12348:tk288174@blogy.nzqcolx.mongodb.net/?retryWrites=true&w=majority");
 
 //mongodb+srv://kichu12348:tk288174@blogy.nzqcolx.mongodb.net/?retryWrites=true&w=majority
 
