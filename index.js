@@ -8,7 +8,7 @@ require('dotenv').config();
 
 //
 const {connectDB} = require('./connection');
-connectDB("mongodb+srv://kichu12348:tk288174@blogy.nzqcolx.mongodb.net/?retryWrites=true&w=majority");
+connectDB("mongodb+srv://kichu12348:tk288174@cluster0.krglllg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 //mongodb+srv://kichu12348:tk288174@blogy.nzqcolx.mongodb.net/?retryWrites=true&w=majority
 
